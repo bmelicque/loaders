@@ -1,0 +1,76 @@
+$loader-size: 10rem;
+$loader-width: .5rem;
+$color-primary: #b558fc;
+$color-secondary: #fcb558;
+$color-tertiary: #58fcb5;
+
+@keyframes scale {
+    from {
+        transform: scaleY(0);
+        transform-origin: bottom;
+    }
+    50% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+    }
+    51% {
+        transform-origin: top;
+    }
+    to {
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+}
+
+@keyframes color-change {
+    0%, 33% {
+        border-left: $loader-width $color-primary solid;
+    }
+    34%, 66% {
+        border-left: $loader-width $color-secondary solid;
+    }
+    67%, 100% {
+        border-left: $loader-width $color-tertiary solid;
+    }
+}
+
+.loader-2 {
+    box-sizing: border-box;
+    z-index: 0;
+    width: $loader-size * .866;
+    height: $loader-size;
+    position:relative;
+
+    &__edge {
+        position: absolute;
+        left: 0;
+        top: $loader-size / 4;
+        height: $loader-size / 2;
+        width: $loader-size * .433;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) {
+                transform: rotate(#{60 * ($i - 1)} + 'deg');
+                transform-origin: center right;
+
+                &::before {
+                    border-left: $loader-width $color-primary solid;
+                    animation: scale 1.2s, color-change 3.6s;
+                    animation-delay: #{$i * .6s};
+                    animation-timing-function: linear;
+                    animation-fill-mode: both;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+    }
+}

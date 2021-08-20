@@ -1,0 +1,195 @@
+* {
+  font-family: "Raleway", sans-serif;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.header h1 {
+  width: 100%;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100vw;
+}
+
+main > div {
+  margin: 5rem;
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader-1 {
+  box-sizing: border-box;
+  z-index: 0;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+.loader-1__spinner {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 10rem;
+  box-sizing: border-box;
+}
+.loader-1__spinner:nth-child(1) {
+  z-index: 3;
+  border: solid 0.5rem transparent;
+  border-top: solid 0.5rem #9356DC;
+  animation: spinning 1.3s cubic-bezier(0.6, 0.2, 0.4, 0.8) infinite;
+}
+.loader-1__spinner:nth-child(2) {
+  z-index: 2;
+  border: solid 0.5rem transparent;
+  border-top: solid 0.5rem #FF79DA;
+  animation: spinning 1.3s cubic-bezier(0.81, 0.27, 0.61, 0.87) infinite;
+}
+.loader-1__spinner:nth-child(3) {
+  z-index: 1;
+  border: solid 0.5rem transparent;
+  border-top: solid 0.5rem #99E2D0;
+  animation: spinning 1.3s cubic-bezier(1, 0.34, 0.81, 0.94) infinite;
+}
+
+@keyframes scale {
+  from {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  51% {
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+}
+@keyframes color-change {
+  0%, 33% {
+    border-left: 0.5rem #b558fc solid;
+  }
+  34%, 66% {
+    border-left: 0.5rem #fcb558 solid;
+  }
+  67%, 100% {
+    border-left: 0.5rem #58fcb5 solid;
+  }
+}
+.loader-2 {
+  box-sizing: border-box;
+  z-index: 0;
+  width: 8.66rem;
+  height: 10rem;
+  position: relative;
+}
+.loader-2__edge {
+  position: absolute;
+  left: 0;
+  top: 2.5rem;
+  height: 5rem;
+  width: 4.33rem;
+}
+.loader-2__edge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.loader-2__edge:nth-child(1) {
+  transform: rotate(0deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(1)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 0.6s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.loader-2__edge:nth-child(2) {
+  transform: rotate(60deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(2)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 1.2s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.loader-2__edge:nth-child(3) {
+  transform: rotate(120deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(3)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 1.8s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.loader-2__edge:nth-child(4) {
+  transform: rotate(180deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(4)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 2.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.loader-2__edge:nth-child(5) {
+  transform: rotate(240deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(5)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+.loader-2__edge:nth-child(6) {
+  transform: rotate(300deg);
+  transform-origin: center right;
+}
+.loader-2__edge:nth-child(6)::before {
+  border-left: 0.5rem #b558fc solid;
+  animation: scale 1.2s, color-change 3.6s;
+  animation-delay: 3.6s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+/*# sourceMappingURL=style.css.map */
